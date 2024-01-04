@@ -1,5 +1,3 @@
-"""module for def pascal_triangle(n): """
-
 def pascal_triangle(n):
     """ create a pascal triangl of size n """
     triangle = []
