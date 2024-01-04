@@ -12,6 +12,7 @@ def pascal_triangle(n):
 
     for row in range(2, n):
         for col in range(1, row):
-            triangle[row][col] = triangle[row - 1][col - 1] + triangle[row - 1][col]
+            triangle[row][col] = triangle[
+                    row - 1][col - 1] + triangle[row - 1][col]
 
     return triangle
