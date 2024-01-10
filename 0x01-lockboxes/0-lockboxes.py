@@ -9,7 +9,7 @@ def canUnlockAll(boxes):
     openedboxes = [boxes[0]]
 
     for mykey in myKeys:
-        if mykey not in opened:
+        if mykey not in opened and mykey < len(boxes):
             myKeys.extend(boxes[mykey])
             opened.append(mykey)
             openedboxes.append(boxes[mykey])
