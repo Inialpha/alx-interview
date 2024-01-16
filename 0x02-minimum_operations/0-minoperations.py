@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 """ module to determine minimum operation """
 
-#def copy()
-#def paste()
 def minOperations(n):
     """ returns the minimum number of operation given n """
 
+    if not isinstance(n, int):
+        return 0
     num_op = 0
     num_char = 1
     while n > num_char:
