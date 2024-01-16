@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ module to determine minimum operation """
 
+
 def minOperations(n):
     """ returns the minimum number of operation given n """
 
@@ -15,7 +16,7 @@ def minOperations(n):
 
         num_char += clip_board
         num_op += 1
-        
+
         if n > num_char:
             num_char += clip_board
             num_op += 1
