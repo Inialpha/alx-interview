@@ -7,18 +7,13 @@ def minOperations(n):
 
     if not isinstance(n, int):
         return 0
+    divisor = 2
     num_op = 0
-    num_char = 1
-    while n > num_char:
-        if n >= num_char * 2:
-            clip_board = num_char
-            num_op += 1
-
-        num_char += clip_board
-        num_op += 1
-
-        if n > num_char:
-            num_char += clip_board
-            num_op += 1
+    while n >= divisor:
+        if n % divisor == 0:
+            num_op += divisor
+            n /= divisor
+        else:
+            divisor += 1
 
     return num_op
