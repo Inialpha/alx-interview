@@ -2,6 +2,10 @@
 """A script that reads stdin line by line and computes metrics
 """
 
+import re
+from sys import stdin, stdout
+
+
 def extract_input(input_line):
     fp = (
         r'\s*(?P<ip>\S+)\s*',
@@ -22,8 +26,7 @@ def extract_input(input_line):
         info['status_code'] = status_code
         info['file_size'] = file_size
     return info
-import re
-from sys import stdin, stdout
+
 
 try:
     num = 0
@@ -31,7 +34,7 @@ try:
     total_size = 0
     while True:
         line = input()
-        
+
         info = extract_input(line)
         num += 1
         total_size += int(info['file_size'])
@@ -43,7 +46,7 @@ try:
         if num % 10 == 0:
             print("File size: {}".format(total_size), flush=True)
             for key, value in sorted(status_dict.items()):
-               print(f"{key}: {value}", flush=True)
+                print(f"{key}: {value}", flush=True)
 except (KeyboardInterrupt, EOFError):
     print(f"File size: {total_size}", flush=True)
     for key, value in sorted(status_dict.items()):
