@@ -31,7 +31,6 @@ try:
     total_size = 0
     while True:
         line = input()
-        #pattern = re.compile(r'^(\d+\.\d+\.\d+\.\d+) - \[(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}\.\d{6})\] "(GET|POST|PUT|DELETE) (/.+?) HTTP/\d\.\d" (\d+) (\d+)$')
         
         info = extract_input(line)
         num += 1
@@ -43,9 +42,9 @@ try:
             status_dict[status] = 1
         if num % 10 == 0:
             print("File size: {}".format(total_size), flush=True)
-            for key, value in status_dict.items():
+            for key, value in sorted(status_dict.items()):
                print(f"{key}: {value}", flush=True)
 except (KeyboardInterrupt, EOFError):
     print(f"File size: {total_size}", flush=True)
-    for key, value in status_dict.items():
+    for key, value in sorted(status_dict.items()):
         print(f"{key}: {value}", flush=True)
