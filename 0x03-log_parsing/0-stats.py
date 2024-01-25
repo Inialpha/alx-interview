@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 import sys
 
+
 def process_line(line, metrics):
     try:
         parts = line.split()
@@ -17,6 +18,7 @@ def process_line(line, metrics):
     except (ValueError, IndexError):
         pass  # Skip lines with invalid format
 
+
 def print_statistics(metrics):
     print(f"Total file size: {metrics['total_size']}")
 
@@ -24,8 +26,20 @@ def print_statistics(metrics):
         count = metrics['status_counts'][status_code]
         print(f"{status_code}: {count}")
 
+
 def main():
-    metrics = {'total_size': 0, 'line_count': 0, 'status_counts': {200: 0, 301: 0, 400: 0, 401: 0, 403: 0, 404: 0, 405: 0, 500: 0}}
+    metrics = {
+        'total_size': 0,
+        'line_count': 0,
+        'status_counts': {
+            200: 0,
+            301: 0,
+            400: 0,
+            401: 0,
+            403: 0,
+            404: 0,
+            405: 0,
+            500: 0}}
 
     try:
         for line in sys.stdin:
@@ -37,6 +51,6 @@ def main():
     except KeyboardInterrupt:
         print_statistics(metrics)
 
+
 if __name__ == "__main__":
     main()
-
