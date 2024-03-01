@@ -3,6 +3,9 @@
 
 
 def makeChange(coins, total):
+
+    if total <= 0:
+        return 0
     total_num = 0
     change = 0
     while change != total:
