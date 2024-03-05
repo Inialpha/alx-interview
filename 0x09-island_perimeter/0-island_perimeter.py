@@ -10,7 +10,9 @@ def island_perimeter(grid):
 
     def check_adjacent(row, col):
         nonlocal para_len
-        if grid[row][col] == 0:
+        if row < 0 or row >= num_rows \
+           or col < 0 or col >= num_cols \
+           or grid[row][col] == 0:
             para_len += 1
 
     for row in range(num_rows):
