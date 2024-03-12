@@ -14,7 +14,7 @@ def getPrimeNumbers(num):
                 allNums[j] = 0
                 j += i
         i += 1
-    
+
     primes = []
     p = 2
     for p in range(2, num + 1):
@@ -29,13 +29,13 @@ def isWinner(x, nums):
     winners = {'Ben': 0, 'Maria': 0}
     for num in nums:
         primes = getPrimeNumbers(num)
-        if len(primes[2:]) % 2 == 0:
+        if len(primes) % 2 == 0:
             winners['Ben'] += 1
         else:
             winners['Maria'] += 1
     if winners['Ben'] > winners['Maria']:
         return 'Ben'
-    # if winners['Maria'] > winners['Ben']:
-    #    return 'Maria'
-    else:
+    if winners['Maria'] > winners['Ben']:
         return 'Maria'
+    else:
+        return None
