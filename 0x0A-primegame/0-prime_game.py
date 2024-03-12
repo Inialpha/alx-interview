@@ -14,8 +14,14 @@ def getPrimeNumbers(num):
                 allNums[j] = 0
                 j += i
         i += 1
+    
+    primes = []
+    p = 2
+    for p in range(2, num + 1):
+        if allNums[p] == 1:
+            primes.append(allNums[p])
 
-    return allNums
+    return primes
 
 
 def isWinner(x, nums):
