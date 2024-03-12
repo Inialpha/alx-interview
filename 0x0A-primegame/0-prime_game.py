@@ -27,8 +27,8 @@ def getPrimeNumbers(num):
 def isWinner(x, nums):
     """ determine the winner of the primegame """
     winners = {'Ben': 0, 'Maria': 0}
-    for num in nums:
-        primes = getPrimeNumbers(num)
+    for i in range(x):
+        primes = getPrimeNumbers(nums[i])
         if len(primes) % 2 == 0:
             winners['Ben'] += 1
         else:
